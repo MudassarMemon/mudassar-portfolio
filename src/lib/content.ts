@@ -71,12 +71,12 @@ export const experience = [
   {
     dates: "Apr 2024 – Sep 2026",
     role: "Software QA Engineer II · QA Wolf",
-    body: "Wrote and maintained roughly 600 Playwright end-to-end tests in TypeScript across about 60 client SaaS apps. Promoted from QA Engineer I. Onboarded client teams and mentored four QA engineers.",
+    body: "Wrote and maintained roughly 600 Playwright end-to-end tests in TypeScript across about 60 client SaaS apps. Promoted from QA Engineer I in Oct 2024. Led technical onboarding for about seven client engineering teams and mentored four QA engineers.",
   },
   {
-    dates: "Jan 2023 – Present",
+    dates: "Jul 2023 – Dec 2024",
     role: "Freelance Software Engineer · Memelope LLC",
-    body: "Responsive sites in Next.js, TypeScript, Tailwind and Sanity, deployed on Vercel. Ran alongside my QA Wolf role.",
+    body: "Responsive sites in Next.js, TypeScript, Tailwind and Sanity, deployed on Vercel. Overlapped with my QA Wolf role in 2024.",
   },
   {
     dates: "Aug 2017 – Jul 2023",
