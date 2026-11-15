@@ -30,12 +30,12 @@ export type Sheet = {
 export const work: Sheet[] = [
   {
     tag: "QA WOLF · PLAYWRIGHT · TYPESCRIPT",
-    title: "Stabilizing suites that failed two runs in three",
+    title: "Stabilizing unstable client test suites",
     context:
-      "Several client suites were failing so often that engineers spent their time on reattempts instead of real bugs.",
-    did: "Isolated test data per run, built reusable MFA and API helpers, and added state teardown so tests stopped depending on each other.",
+      "Several client suites failed often enough that engineers spent their time on reattempts instead of real bugs.",
+    did: "Debugged root causes, fixed async race conditions, isolated test data per run and added state teardown so tests stopped depending on each other.",
     outcome:
-      "Reattempts dropped about 80%. Flakiness on those suites fell from roughly 65–70% to 10–12%.",
+      "Reattempts dropped about 80%. Failed tests per suite run, tracked on QA Wolf's client metrics dashboard, fell from roughly 65–70% to 10–12%.",
   },
   {
     tag: "QA WOLF · SALESFORCE · GOOGLE WORKSPACE APIS",
