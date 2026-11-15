@@ -9,5 +9,5 @@ npm run build   # production build
 ```
 
 - All copy lives in `src/lib/content.ts`.
-- Drop your resume at `public/Mudassar-Memon-Resume.pdf`. The Download button appears automatically.
+- Drop your resume at `public/Mudassar-Memon-Resume.pdf`. The resume buttons appear automatically (until then they fall back to "Email me").
 - Deploy: import the repo in Vercel (framework auto-detected).

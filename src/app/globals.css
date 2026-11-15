@@ -29,6 +29,8 @@ a:focus-visible, button:focus-visible {
   outline-offset: 3px;
 }
 
+#contact a:focus-visible { outline-color: var(--color-ink); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }

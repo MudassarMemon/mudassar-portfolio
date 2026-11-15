@@ -4,13 +4,13 @@ export const profile = {
   name: "Mudassar Memon",
   headline: "Full-stack engineer with a test-automation background.",
   intro:
-    "I build React and Next.js products, and the Playwright suites that keep them stable. Civil engineer by training, former construction project manager, now looking for full-stack, SDET and forward-deployed roles.",
+    "I build React and Next.js products and the Playwright suites that keep them stable. Most recently at QA Wolf: about 600 end-to-end tests across roughly 60 client SaaS apps. Before software, six years managing NYC school construction projects.",
   email: "mudassar95memon@gmail.com",
   github: "https://github.com/MudassarMemon",
   linkedin: "https://www.linkedin.com/in/mudassarmemon/",
-  resumeFile: "/Mudassar-Memon-Resume.pdf", // drop the PDF in /public; button hides itself if missing
+  resumeFile: "/Mudassar-Memon-Resume.pdf", // drop the PDF in /public; buttons fall back to email if missing
   titleBlock: [
-    ["STATUS", "Open to work"],
+    ["STATUS", "Available now"],
     ["SEEKING", "Full-stack · SDET · FDE"],
     ["STACK", "React · TypeScript · Next.js"],
     ["TESTING", "Playwright"],
@@ -43,23 +43,23 @@ export const work: Sheet[] = [
     context:
       "A Salesforce-integrated product had thin end-to-end coverage and no safe way to test against real org state.",
     did: "Owned the account end to end. Set up five isolated Salesforce orgs and drove Google Workspace through its APIs for test setup and verification.",
-    outcome: "Roughly nine times the coverage on that account.",
+    outcome: "The suite grew from under 10 tests to about 90, each running against isolated org state instead of shared data.",
   },
   {
     tag: "QA WOLF · WEB3",
     title: "Automating browser-extension wallet flows",
     context:
-      "Crypto apps depend on wallet extensions, which most test tools can't drive or keep stable.",
+      "Crypto apps depend on wallet browser extensions, which sit outside the page and are awkward to automate.",
     did: "Built automation for wallet extension interactions, mock wallet state and transaction validation.",
-    outcome: "Made wallet-dependent user flows testable end to end.",
+    outcome: "Wallet-dependent user flows became testable end to end.",
   },
   {
     tag: "FREELANCE · NEXT.JS · SANITY",
-    title: "Client sites that non-technical owners can run themselves",
+    title: "Two client sites, one with a self-serve CMS",
     context:
-      "Writers and journalists needed fast, good-looking sites they could maintain without a developer.",
-    did: "Built Next.js sites, working with my sister, a web designer, on design. For Aliza Abarbanel I set up a Sanity Studio so she edits her own content, wrote handover docs and supported the site after launch.",
-    outcome: "Both sites are live and each shipped in under a month.",
+      "Two clients needed fast, good-looking sites, and one wanted to edit her own content without a developer.",
+    did: "Built both in Next.js. Priya Krishna's was designed with my sister, a web designer. For Aliza Abarbanel I set up a Sanity Studio so she edits her own content, wrote handover docs and supported the site after launch.",
+    outcome: "Both sites are live, each shipped in under a month.",
     links: [
       { label: "priyakrishna.me", href: "https://priyakrishna.me/" },
       { label: "aliza-abarbanel.com", href: "https://aliza-abarbanel.com/" },
@@ -129,5 +129,5 @@ export const skills: [string, string][] = [
 
 export const background = {
   title: "Plan. Spec. Build. Inspect.",
-  body: "Six years in construction taught me to scope work clearly, communicate steadily and check everything before sign-off. I work the same way as an engineer.",
+  body: "Six years in construction taught me to scope work clearly, keep people informed and check everything before sign-off. I work the same way as an engineer.",
 };

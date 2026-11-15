@@ -11,15 +11,17 @@ export function SectionHeading({ id, sheet, title }: { id: string; sheet: string
   );
 }
 
-export function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+export function ExternalLink({ href, children, label }: { href: string; children: React.ReactNode; label?: string }) {
   return (
     <a
       href={href}
+      aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
       className="font-semibold text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
     >
       {children} <span aria-hidden>↗</span>
+      <span className="sr-only"> (opens in new tab)</span>
     </a>
   );
 }

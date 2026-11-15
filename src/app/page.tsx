@@ -20,6 +20,12 @@ const btnGhost =
 export default function Home() {
   return (
     <>
+      <a
+        href="#work"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-30 focus:bg-accent focus:px-3 focus:py-2 focus:text-ink"
+      >
+        Skip to content
+      </a>
       <header className="sticky top-0 z-20 border-b border-line/30 bg-ink/90 backdrop-blur">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4" aria-label="Primary">
           <a href="#top" className="font-display text-lg font-bold">
@@ -44,9 +50,13 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">{profile.intro}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              {hasResume && (
-                <a href={profile.resumeFile} className={btnPrimary} download>
-                  Download resume
+              {hasResume ? (
+                <a href={profile.resumeFile} className={btnPrimary} target="_blank" rel="noopener noreferrer">
+                  View resume
+                </a>
+              ) : (
+                <a href={`mailto:${profile.email}`} className={btnPrimary}>
+                  Email me
                 </a>
               )}
               <a href={profile.github} className={btnGhost} target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -54,24 +64,26 @@ export default function Home() {
             </div>
           </div>
 
-          <dl className="border border-line/70 font-mono text-xs">
-            <div className="border-b border-line/70 px-4 py-2 tracking-widest uppercase">Title block</div>
-            {profile.titleBlock.map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-4 border-b border-line/20 px-4 py-2.5 last:border-b-0">
-                <dt className="text-muted">{k}</dt>
-                <dd className={k === "STATUS" ? "text-accent" : ""}>{v}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="border border-line/70 font-mono text-xs">
+            <p className="border-b border-line/70 px-4 py-2 tracking-widest uppercase">Title block</p>
+            <dl>
+              {profile.titleBlock.map(([k, v]) => (
+                <div key={k} className="flex justify-between gap-4 border-b border-line/20 px-4 py-2.5 last:border-b-0">
+                  <dt className="text-muted">{k}</dt>
+                  <dd className="text-right">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </section>
 
         {/* Selected work */}
         <section className="py-16">
-          <SectionHeading id="work" sheet="Sheet 01 / Selected work" title="What I did and how" />
+          <SectionHeading id="work" sheet="Sheet 01 / Selected work" title="Selected work" />
           <div className="grid gap-6 md:grid-cols-2">
             {work.map((w) => (
               <article key={w.title} className="flex flex-col border border-line/70 bg-ink-2/60 p-6">
-                <p className="font-mono text-[11px] tracking-widest text-muted uppercase">{w.tag}</p>
+                <p className="font-mono text-xs tracking-widest text-muted uppercase">{w.tag}</p>
                 <h3 className="font-display mt-3 text-xl font-bold leading-snug">{w.title}</h3>
                 <dl className="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
                   <div><dt className="inline font-semibold text-white">Context. </dt><dd className="inline">{w.context}</dd></div>
@@ -89,7 +101,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-4 font-mono text-xs text-muted">
-            Client names at QA Wolf are left out on purpose.
+            QA Wolf client names omitted for confidentiality.
           </p>
         </section>
 
@@ -111,7 +123,7 @@ export default function Home() {
 
         {/* Projects */}
         <section className="py-16">
-          <SectionHeading id="projects" sheet="Sheet 03 / Projects" title="Things I've built" />
+          <SectionHeading id="projects" sheet="Sheet 03 / Projects" title="Projects" />
           <div className="grid gap-5 sm:grid-cols-2">
             {projects.map((p) => (
               <article key={p.name} className="border border-dashed border-line/60 p-5">
@@ -119,7 +131,7 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-relaxed text-slate-300">{p.body}</p>
                 <p className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
                   {p.links.map((l) => (
-                    <ExternalLink key={l.href} href={l.href}>{l.label}</ExternalLink>
+                    <ExternalLink key={l.href} href={l.href} label={`${l.label}: ${p.name}`}>{l.label}</ExternalLink>
                   ))}
                 </p>
               </article>
@@ -136,9 +148,9 @@ export default function Home() {
           </div>
           <dl className="self-start border border-line/70 font-mono text-xs">
             {skills.map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-4 border-b border-line/20 px-4 py-3 last:border-b-0">
+              <div key={k} className="flex flex-col gap-1 border-b border-line/20 px-4 py-3 last:border-b-0 sm:flex-row sm:justify-between sm:gap-4">
                 <dt className="text-muted">{k}</dt>
-                <dd className="text-right">{v}</dd>
+                <dd className="sm:text-right">{v}</dd>
               </div>
             ))}
           </dl>
@@ -151,17 +163,15 @@ export default function Home() {
               <h2 className="font-display text-2xl font-bold sm:text-3xl">
                 Open to full-stack, SDET and forward-deployed roles.
               </h2>
-              <p className="mt-2 text-sm">
-                <a className="font-semibold underline underline-offset-4" href={`mailto:${profile.email}`}>Email</a>
-                <span className="mx-3">·</span>
+              <p className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                <a className="font-semibold underline underline-offset-4" href={`mailto:${profile.email}`}>{profile.email}</a>
                 <a className="font-semibold underline underline-offset-4" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <span className="mx-3">·</span>
                 <a className="font-semibold underline underline-offset-4" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
               </p>
             </div>
             {hasResume ? (
-              <a href={profile.resumeFile} download className="inline-flex shrink-0 whitespace-nowrap rounded-sm bg-ink px-5 py-3 text-sm font-semibold text-white">
-                Download resume
+              <a href={profile.resumeFile} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 whitespace-nowrap rounded-sm bg-ink px-5 py-3 text-sm font-semibold text-white">
+                View resume
               </a>
             ) : (
               <a href={`mailto:${profile.email}`} className="inline-flex shrink-0 whitespace-nowrap rounded-sm bg-ink px-5 py-3 text-sm font-semibold text-white">

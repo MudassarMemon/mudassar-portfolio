@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Mudassar Memon · Full-stack engineer",
   description:
     "Full-stack engineer with a test-automation background. React, Next.js, TypeScript and Playwright. Open to full-stack, SDET and forward-deployed roles.",
+  twitter: { card: "summary" },
   openGraph: {
     title: "Mudassar Memon · Full-stack engineer",
     description: "React, Next.js, TypeScript and Playwright. Open to full-stack, SDET and forward-deployed roles.",
