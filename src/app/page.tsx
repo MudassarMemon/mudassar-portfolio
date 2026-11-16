@@ -183,7 +183,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-line/30 py-6 text-center font-mono text-xs text-muted">
-        © {new Date().getFullYear()} {profile.name} · Long Island, NY
+        © {new Date().getFullYear()} {profile.name} · New York, NY
       </footer>
     </>
   );

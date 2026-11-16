@@ -14,7 +14,7 @@ export const profile = {
     ["SEEKING", "Full-stack · SDET · FDE"],
     ["STACK", "React · TypeScript · Next.js"],
     ["TESTING", "Playwright"],
-    ["BASE", "Long Island, NY · Remote / NYC"],
+    ["BASE", "New York, NY · Remote"],
   ] as [string, string][],
 };
 
