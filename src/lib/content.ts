@@ -102,7 +102,10 @@ export const projects = [
   {
     name: "TuneUp",
     body: "MERN app for connecting musicians. I was backend co-lead: Express, MongoDB, JWT auth and Google Maps.",
-    links: [{ label: "Repo", href: "https://github.com/danielhlee4/TuneUp" }],
+    links: [
+      { label: "Live demo", href: "https://tuneup-twco.onrender.com" },
+      { label: "Repo", href: "https://github.com/danielhlee4/TuneUp" },
+    ],
   },
   {
     name: "PLS Mechanical",
